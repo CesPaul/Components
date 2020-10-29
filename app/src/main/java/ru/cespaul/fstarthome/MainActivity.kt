@@ -1,4 +1,4 @@
-package com.cespaul.focusstart20.components
+package ru.cespaul.fstarthome
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

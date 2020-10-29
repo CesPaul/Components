@@ -1,4 +1,4 @@
-package com.cespaul.focusstart20.components
+package ru.cespaul.fstarthome.components
 
 import org.junit.Test
 

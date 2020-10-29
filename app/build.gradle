@@ -9,7 +9,7 @@ android {
     buildToolsVersion "30.0.2"
 
     defaultConfig {
-        applicationId "com.cespaul.focusstart20.components"
+        applicationId "ru.cespaul.fstarthome"
         minSdkVersion 23
         targetSdkVersion 30
         versionCode 1

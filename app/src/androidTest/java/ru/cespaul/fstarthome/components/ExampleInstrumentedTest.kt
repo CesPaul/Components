@@ -1,4 +1,4 @@
-package com.cespaul.focusstart20.components
+package ru.cespaul.fstarthome.components
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4
@@ -19,6 +19,6 @@ class ExampleInstrumentedTest {
     fun useAppContext() {
         // Context of the app under test.
         val appContext = InstrumentationRegistry.getInstrumentation().targetContext
-        assertEquals("com.cespaul.focusstart20.components", appContext.packageName)
+        assertEquals("com.cespaul.fstarthome.components", appContext.packageName)
     }
 }
