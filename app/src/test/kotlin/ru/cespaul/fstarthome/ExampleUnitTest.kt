@@ -1,4 +1,4 @@
-package ru.cespaul.fstarthome.components
+package ru.cespaul.fstarthome
 
 import org.junit.Test
 

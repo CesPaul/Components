@@ -3,24 +3,23 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="ru.cespaul.fstarthome.C">
+    tools:context="ru.cespaul.fstarthome.task2.C">
 
     <TextView
         android:id="@+id/title_c_fragment"
+        style="@style/Theme.FStartHome.TextStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center|top"
-        android:layout_marginTop="16dp"
-        android:text="C"
-        android:textSize="24sp"
-        android:textStyle="bold" />
+        android:layout_marginTop="@dimen/double_base_grid_size"
+        android:text="C" />
 
     <Button
         android:id="@+id/to_a_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|center"
-        android:layout_marginBottom="16dp"
+        android:layout_marginBottom="@dimen/double_base_grid_size"
         android:text="Go to A" />
 
 </FrameLayout>
