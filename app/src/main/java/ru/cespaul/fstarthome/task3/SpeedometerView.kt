@@ -1,7 +1,7 @@
 package ru.cespaul.fstarthome.task3
 
 import android.content.Context
-import android.graphics.*
+import android.graphics.Canvas
 import android.util.AttributeSet
 import android.view.View
 import androidx.core.content.res.ResourcesCompat
@@ -20,7 +20,9 @@ class SpeedometerView @JvmOverloads constructor(
 
     private val px = size / 2f
     private val py = size / 2f
-    private val increment = 30F
+    private val step = 30F
+
+    private var arrowDirection: ArrowChangeDirection = ArrowChangeDirection.NONE
 
     private val panel = ResourcesCompat.getDrawable(resources, R.drawable.ic_panel, null)
     private val arrow = ResourcesCompat.getDrawable(resources, R.drawable.ic_arrow, null)
@@ -48,16 +50,16 @@ class SpeedometerView @JvmOverloads constructor(
     override fun onDraw(canvas: Canvas?) {
         super.onDraw(canvas)
 
-            panel?.setBounds(0, 0, size, size)
-            arrow?.setBounds(0, 0, size, size)
+        panel?.setBounds(0, 0, size, size)
+        arrow?.setBounds(0, 0, size, size)
 
         canvas?.let { panel?.draw(it) }
-        rotateArrowUp(canvas)
+        rotateArrow(arrowDirection, canvas)
         canvas?.let { arrow?.draw(it) }
     }
 
-    /*fun rotate(arrowChangeDirection: ArrowChangeDirection, canvas: Canvas?) {
-        b?.invoke(arrowChangeDirection, canvas)
+    fun changeDirection(arrowChangeDirection: ArrowChangeDirection) {
+        arrowDirection = arrowChangeDirection
         invalidate()
     }
 
@@ -65,81 +67,80 @@ class SpeedometerView @JvmOverloads constructor(
         when (arrowChangeDirection) {
             ArrowChangeDirection.DOWN -> rotateArrowDown(canvas)
             ArrowChangeDirection.UP -> rotateArrowUp(canvas)
+            ArrowChangeDirection.NONE -> return
         }
-    }*/
+        arrowDirection = ArrowChangeDirection.NONE
+    }
 
-    fun rotateArrowUp(canvas: Canvas?) {
+    private fun rotateArrowUp(canvas: Canvas?) {
         when (degreesArrow) {
             0f -> {
-                canvas?.rotate(degreesArrow + increment, px, py)
-                degreesArrow += increment
+                canvas?.rotate(degreesArrow + step, px, py)
+                degreesArrow += step
             }
             30f -> {
-                canvas?.rotate(degreesArrow + increment, px, py)
-                degreesArrow += increment
+                canvas?.rotate(degreesArrow + step, px, py)
+                degreesArrow += step
             }
             60f -> {
-                canvas?.rotate(degreesArrow + increment, px, py)
-                degreesArrow += increment
+                canvas?.rotate(degreesArrow + step, px, py)
+                degreesArrow += step
             }
 
             90f -> {
-                canvas?.rotate(degreesArrow + increment, px, py)
-                degreesArrow += increment
+                canvas?.rotate(degreesArrow + step, px, py)
+                degreesArrow += step
             }
             120f -> {
-                canvas?.rotate(degreesArrow + increment, px, py)
-                degreesArrow += increment
+                canvas?.rotate(degreesArrow + step, px, py)
+                degreesArrow += step
             }
             150f -> {
-                canvas?.rotate(degreesArrow + increment, px, py)
-                degreesArrow += increment
+                canvas?.rotate(degreesArrow + step, px, py)
+                degreesArrow += step
             }
             180f -> {
-                canvas?.rotate(degreesArrow + increment, px, py)
-                degreesArrow += increment
+                canvas?.rotate(degreesArrow + step, px, py)
+                degreesArrow += step
             }
             210f -> {
-                canvas?.rotate(degreesArrow + increment, px, py)
+                canvas?.rotate(degreesArrow + step, px, py)
             }
         }
     }
 
-    /*private fun rotateArrowDown(canvas: Canvas?) {
+    private fun rotateArrowDown(canvas: Canvas?) {
         when (degreesArrow) {
-            0f -> {
-                canvas?.rotate(degreesArrow + increment, px, py)
-            }
+            0f -> return
             30f -> {
-                canvas?.rotate(degreesArrow + increment, px, py)
-                degreesArrow -= increment
+                canvas?.rotate(degreesArrow - step, px, py)
+                degreesArrow -= step
             }
             60f -> {
-                canvas?.rotate(degreesArrow + increment, px, py)
-                degreesArrow -= increment
+                canvas?.rotate(degreesArrow - step, px, py)
+                degreesArrow -= step
             }
 
             90f -> {
-                canvas?.rotate(degreesArrow + increment, px, py)
-                degreesArrow -= increment
+                canvas?.rotate(degreesArrow - step, px, py)
+                degreesArrow -= step
             }
             120f -> {
-                canvas?.rotate(degreesArrow + increment, px, py)
-                degreesArrow -= increment
+                canvas?.rotate(degreesArrow - step, px, py)
+                degreesArrow -= step
             }
             150f -> {
-                canvas?.rotate(degreesArrow + increment, px, py)
-                degreesArrow -= increment
+                canvas?.rotate(degreesArrow - step, px, py)
+                degreesArrow -= step
             }
             180f -> {
-                canvas?.rotate(degreesArrow + increment, px, py)
-                degreesArrow -= increment
+                canvas?.rotate(degreesArrow - step, px, py)
+                degreesArrow -= step
             }
             210f -> {
-                canvas?.rotate(degreesArrow + increment, px, py)
-                degreesArrow -= increment
+                canvas?.rotate(degreesArrow - step, px, py)
+                degreesArrow -= step
             }
         }
-    }*/
-
+    }
 }

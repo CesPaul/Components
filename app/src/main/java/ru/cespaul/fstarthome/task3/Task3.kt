@@ -1,12 +1,10 @@
 package ru.cespaul.fstarthome.task3
 
-import android.graphics.Canvas
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.content.res.ResourcesCompat
+import androidx.fragment.app.Fragment
 import kotlinx.android.synthetic.main.fragment_task3.*
 import ru.cespaul.fstarthome.R
 
@@ -24,16 +22,11 @@ class Task3 : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         speedUp.setOnClickListener {
-            val canvas = Canvas()
-            speedometerView.rotateArrowUp(canvas)
-            speedometerView.invalidate()
+            speedometerView.changeDirection(ArrowChangeDirection.UP)
         }
 
-        /*speedDown.setOnClickListener {
-            val canvas = Canvas()
-            speedometerView.rotateArrowDown(canvas)
-            speedometerView.invalidate()
-            speedometerView.requestLayout()
-        }*/
+        speedDown.setOnClickListener {
+            speedometerView.changeDirection(ArrowChangeDirection.DOWN)
+        }
     }
 }
