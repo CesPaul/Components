@@ -1,5 +1,5 @@
 <resources>
     <string name="app_name">FStartHome</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="task5_used_flavor">Used %1$s %2$s</string>
 </resources>

@@ -1,10 +1,10 @@
 package ru.cespaul.fstarthome
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.navigation.Navigation
 import kotlinx.android.synthetic.main.fragment_main.*
 
@@ -29,6 +29,10 @@ class MainFragment : Fragment() {
 
         to_task3_button.setOnClickListener {
             navController.navigate(R.id.action_mainFragment_to_task3)
+        }
+
+        to_task5_button.setOnClickListener {
+            navController.navigate(R.id.action_mainFragment_to_task5)
         }
     }
 }

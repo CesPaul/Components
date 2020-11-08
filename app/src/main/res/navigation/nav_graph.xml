@@ -42,17 +42,25 @@
         android:id="@+id/mainFragment"
         android:name="ru.cespaul.fstarthome.MainFragment"
         android:label="fragment_main"
-        tools:layout="@layout/fragment_main" >
+        tools:layout="@layout/fragment_main">
         <action
             android:id="@+id/action_mainFragment_to_a"
             app:destination="@id/a" />
         <action
             android:id="@+id/action_mainFragment_to_task3"
             app:destination="@id/task2" />
+        <action
+            android:id="@+id/action_mainFragment_to_task5"
+            app:destination="@id/task5" />
     </fragment>
     <fragment
         android:id="@+id/task2"
         android:name="ru.cespaul.fstarthome.task3.Task3"
         android:label="fragment_task2"
         tools:layout="@layout/fragment_task3" />
+    <fragment
+        android:id="@+id/task5"
+        android:name="ru.cespaul.fstarthome.task5.Task5"
+        android:label="fragment_task5"
+        tools:layout="@layout/fragment_task5" />
 </navigation>
