@@ -22,11 +22,16 @@ class Task3 : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         speedUp.setOnClickListener {
-            speedometerView.changeDirection(ArrowChangeDirection.UP)
+            speedometerView.changeDirection(ArrowChangeState.UP)
         }
 
         speedDown.setOnClickListener {
-            speedometerView.changeDirection(ArrowChangeDirection.DOWN)
+            speedometerView.changeDirection(ArrowChangeState.DOWN)
         }
+    }
+
+    override fun onResume() {
+        super.onResume()
+
     }
 }

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <attr name="panelColor" format="color" />
+    <attr name="arrowColor" format="color" />
+    <declare-styleable name="SpeedometerView">
+        <attr name="panelColor" />
+        <attr name="arrowColor" />
+    </declare-styleable>
+</resources>
